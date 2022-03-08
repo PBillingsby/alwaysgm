@@ -1,41 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Clock from 'react-live-clock';
+
 import {
   ChakraProvider,
   Box,
+  Container,
   Text,
-  Link,
   VStack,
-  Code,
-  Grid,
+  Center,
   theme,
 } from '@chakra-ui/react';
+
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 
 function App() {
+  const [textColor, setTextColor] = useState('#FF3131');
+  const [interaction, setInteraction] = useState(false);
+  // const [clockValues, setClockValues] = useState();
+
+  // setTimeout(() => {
+  //   const time = new Date().toLocaleTimeString().split(/[: | ( AM| PM)]+/);
+  //   setClockValues(time);
+  //   setTextColor(interaction ? '#FF3131' : 'black')
+  //   console.log(clockValues)
+  // }, 10000);
+
+
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+      <Box fontSize="xl">
+        <ColorModeSwitcher justifySelf="flex-end" setInteraction={setInteraction} interaction={interaction} />
+        <Container pt='30vh'>
+          {
+            <Center fontFamily="DS DIGI">
+              <Box border='1px' w={12} borderRadius='50px' p={2} color={interaction ? 'white' : 'gray.800'}>
+                <Text fontSize='xxl' d={interaction ? '' : 'none'} color='white'>{interaction ? 'D_D' : 'D_D'}</Text>
+              </Box>
+              <Box p={8}>
+                {interaction ?
+                  <Text fontSize='6xl' fontFamily="DS DIGI" color={textColor}>
+                    AL:WA:YS
+                    </Text>
+                  :
+                  <Text fontSize='6xl' fontFamily="DS DIGI" color='#FF3131'>
+                    <Clock format={'HH:mm:ss'} ticking />
+                  </Text>
+                }
+              </Box>
+              <VStack color='white'>
+                <Text color='white'>{interaction ? 'gm' : 'am'}</Text>
+                <Text color='white'>{interaction ? 'gn' : 'pm'}</Text>
+              </VStack>
+            </Center>
+          }
+        </Container>
       </Box>
-    </ChakraProvider>
+    </ChakraProvider >
   );
 }
 
