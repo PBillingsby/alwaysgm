@@ -14,7 +14,7 @@ import theme from './theme'
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 function App() {
-  const [textColor, setTextColor] = useState('#FF3131');
+  // const [textColor, setTextColor] = useState('#FF3131');
   const [interaction, setInteraction] = useState(false);
 
   // Fix this
@@ -33,11 +33,11 @@ function App() {
           {
             <Center fontFamily="DS DIGI">
               <Box border='1px' w={12} borderRadius='50px' p={2} color={interaction ? 'white' : 'gray.800'}>
-                <Text fontSize='xxl' d={interaction ? '' : 'none'} color='white'>{interaction ? 'D_D' : 'D_D'}</Text>
+                <Text fontSize='xxl' d={interaction ? '' : 'none'} color='white'>D_D</Text>
               </Box>
               <Box p={8}>
                 {interaction ?
-                  <Text fontSize='6xl' color={textColor} ticking>
+                  <Text fontSize='6xl' color={'#FF3131'} ticking>
                     AL:WA:YS
                     </Text>
                   :
