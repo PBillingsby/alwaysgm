@@ -17,11 +17,12 @@ function App() {
   const [textColor, setTextColor] = useState('#FF3131');
   const [interaction, setInteraction] = useState(false);
 
-  setTimeout(() => {
-    if (interaction) {
-      setTextColor(interaction ? '#FF3131' : 'gray.800')
-    }
-  }, 1000);
+  // Fix this
+  // setTimeout(() => {
+  //   if (interaction) {
+  //     setTextColor(interaction ? '#FF3131' : 'gray.800')
+  //   }
+  // }, 1000);
 
 
   return (
@@ -36,7 +37,7 @@ function App() {
               </Box>
               <Box p={8}>
                 {interaction ?
-                  <Text fontSize='6xl' color={textColor}>
+                  <Text fontSize='6xl' color={textColor} ticking>
                     AL:WA:YS
                     </Text>
                   :
