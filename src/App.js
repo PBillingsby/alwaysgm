@@ -8,21 +8,20 @@ import {
   Text,
   VStack,
   Center,
-  theme,
 } from '@chakra-ui/react';
+import theme from './theme'
 
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 function App() {
   const [textColor, setTextColor] = useState('#FF3131');
   const [interaction, setInteraction] = useState(false);
-  // const [clockValues, setClockValues] = useState();
 
   setTimeout(() => {
     if (interaction) {
       setTextColor(interaction ? '#FF3131' : 'gray.800')
     }
-  }, 10000);
+  }, 1000);
 
 
   return (
