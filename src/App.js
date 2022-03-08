@@ -18,12 +18,11 @@ function App() {
   const [interaction, setInteraction] = useState(false);
   // const [clockValues, setClockValues] = useState();
 
-  // setTimeout(() => {
-  //   const time = new Date().toLocaleTimeString().split(/[: | ( AM| PM)]+/);
-  //   setClockValues(time);
-  //   setTextColor(interaction ? '#FF3131' : 'black')
-  //   console.log(clockValues)
-  // }, 10000);
+  setTimeout(() => {
+    if (interaction) {
+      setTextColor(interaction ? '#FF3131' : 'gray.800')
+    }
+  }, 10000);
 
 
   return (
@@ -38,11 +37,11 @@ function App() {
               </Box>
               <Box p={8}>
                 {interaction ?
-                  <Text fontSize='6xl' fontFamily="DS DIGI" color={textColor}>
+                  <Text fontSize='6xl' color={textColor}>
                     AL:WA:YS
                     </Text>
                   :
-                  <Text fontSize='6xl' fontFamily="DS DIGI" color='#FF3131'>
+                  <Text fontSize='6xl' color='#FF3131'>
                     <Clock format={'HH:mm:ss'} ticking />
                   </Text>
                 }
