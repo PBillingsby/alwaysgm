@@ -26,11 +26,11 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Box fontSize="xl">
-        <ColorModeSwitcher setInteraction={setInteraction} interaction={interaction} />
         <Container pt='30vh'>
           {
-            <Center fontFamily="monospace">
-              <Box p={8}>
+            <HStack spacing={8}>
+              <ColorModeSwitcher setInteraction={setInteraction} interaction={interaction} />
+              <Center p={8} fontFamily="monospace">
                 {interaction ?
                   <Text fontSize='6xl' color={textColor} ticking>
                     AL:WA:YS
@@ -40,12 +40,12 @@ function App() {
                     <Clock format={'HH:mm:ss'} ticking />
                   </Text>
                 }
-              </Box>
-              <VStack color='white'>
-                <Text color='white'>{interaction ? 'gm' : 'am'}</Text>
-                <Text color='white'>{interaction ? 'gn' : 'pm'}</Text>
-              </VStack>
-            </Center>
+                <VStack color='white'>
+                  <Text color='white'>{interaction ? 'GM' : 'AM'}</Text>
+                  <Text color='white'>{interaction ? 'GN' : 'PM'}</Text>
+                </VStack>
+              </Center>
+            </HStack>
           }
         </Container>
       </Box>
