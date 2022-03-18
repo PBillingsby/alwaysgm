@@ -14,7 +14,7 @@ export const ColorModeSwitcher = props => {
   };
 
   return (
-    <Flex maxW={20} position='fixed' p={4}>
+    <Flex>
       {props.interaction ?
         <ScaleFade initialScale={0.1} reverse in={toggle} filter={{ boxShadow: (toggle ? '' : '0px 0px 15px #a5a5a5') }}>
           <svg height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1px" padding="6px" stroke-linejoin="round" hover={{ boxShadow: (toggle ? '' : '0px 0px 15px #a5a5a5') }} xmlns="http://www.w3.org/2000/svg" onClick={() => toggleMode()} filter='drop-shadow(3px 5px 2px rgb(0 1 1 / 0.5)'>
