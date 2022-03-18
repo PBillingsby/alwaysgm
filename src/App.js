@@ -25,7 +25,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <Center pt='40vh'>
-        <HStack fontFamily='monospace' p={4} borderRadius={8}>
+        <HStack fontFamily='monospace'>
           <ColorModeSwitcher setInteraction={setInteraction} interaction={interaction} />
           {interaction ?
             <Text fontSize='6xl' color={textColor}>

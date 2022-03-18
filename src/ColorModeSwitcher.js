@@ -16,7 +16,7 @@ export const ColorModeSwitcher = props => {
   return (
     <Flex>
       {props.interaction ?
-        <ScaleFade initialScale={0.1} reverse in={toggle} filter={{ boxShadow: (toggle ? '' : '0px 0px 15px #a5a5a5') }}>
+        <ScaleFade initialScale={0.1} reverse in={toggle} filter={{ boxShadow: '0px 0px 15px #a5a5a5' }}>
           <svg height="48" viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="1px" padding="6px" stroke-linejoin="round" hover={{ boxShadow: (toggle ? '' : '0px 0px 15px #a5a5a5') }} xmlns="http://www.w3.org/2000/svg" onClick={() => toggleMode()} filter='drop-shadow(3px 5px 2px rgb(0 1 1 / 0.5)'>
             <rect width="47.4353" height="47.4353" rx="23.7176" outline="gray.800" fill="gray.800" />
             <rect x="28.1648" y="30.3882" width="2.96471" height="9.63529" transform="rotate(90 28.1648 30.3882)" fill="white" />
@@ -30,7 +30,7 @@ export const ColorModeSwitcher = props => {
           aria-label={`Switch to ${text} mode`}
           w='fit-content'
           size='lg'
-          _hover={{ boxShadow: (toggle ? '' : '0px 0px 15px #a5a5a5') }}
+          _hover={{ boxShadow: '0px 0px 15px #a5a5a5' }}
           onClick={() => toggleMode()}
           icon={<Icon as={Power} />}
           isRound
